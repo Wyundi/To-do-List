@@ -22,9 +22,13 @@ export const View = (() => {
     arrow_right: `<svg focusable="false" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" data-testid="ArrowForwardIcon" aria-label="fontSize small"><path d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" fill="#ffffff"></path></svg>`
   };
 
-  const render = (ele, tmp) => {
-    if (ele && tmp) {
-      ele.innerHTML = tmp;
+  const render = (ele, html) => {
+    if (ele) {
+      if (html === '') {
+        ele.innerHTML = '';
+      } else {
+        ele.innerHTML = html;
+      }
     }
   }
 
